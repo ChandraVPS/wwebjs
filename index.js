@@ -3,7 +3,7 @@ import wa from 'whatsapp-web.js';
 import fs from 'fs';
 import cron from 'node-cron';
 import dotenv from 'dotenv';
-import qr from 'qrcode-terminal';
+import qrcode from 'qrcode-terminal';
 dotenv.config();
 const { Client, LocalAuth, Chat } = wa;
 const log = console.log;
@@ -11,7 +11,7 @@ const log = console.log;
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: false,
+        headless: true,
         args: [
             "--no-sandbox",
             "--disable-setuid-sandbox",
