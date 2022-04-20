@@ -21,6 +21,7 @@
    },
    "homepage": "https://github.com/chandra-bachtiar/wwebjs#readme",
    "dependencies": {
+      "chalk": "^5.0.1",
       "whatsapp-web.js": "^1.16.5"
    }
 }
