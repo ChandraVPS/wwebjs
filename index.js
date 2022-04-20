@@ -3,6 +3,7 @@ import wa from 'whatsapp-web.js';
 import fs from 'fs';
 import cron from 'node-cron';
 import dotenv from 'dotenv';
+import qr from 'qrcode-terminal';
 dotenv.config();
 const { Client, LocalAuth, Chat } = wa;
 const log = console.log;
@@ -47,7 +48,8 @@ client.on('message', async (msg) => {
 });
 
 client.on('qr', (qr) => {
-    console.log('QR RECEIVED', qr);
+    qrcode.generate(qr, { small: true });
+    log(chalk.blue("[SERVER] Scan QR code diatas untuk login"));
 });
 
 client.on('ready', () => {
